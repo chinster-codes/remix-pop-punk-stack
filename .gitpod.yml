@@ -1,0 +1,17 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - name: Dev Server
+    init: npm install
+    command: npm run dev
+
+ports:
+  - name: App Server
+    port: 3000
+  - name: Dev Server
+    port: 3001
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
