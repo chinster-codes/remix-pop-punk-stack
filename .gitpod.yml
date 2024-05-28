@@ -2,7 +2,9 @@ image: gitpod/workspace-full:latest
 
 tasks:
   - name: Dev Server
-    init: npm install
+    init: |
+      npm install
+      npx prisma migrate dev
     command: npm run dev
 
 ports:
@@ -17,3 +19,4 @@ vscode:
     - dbaeumer.vscode-eslint
     - esbenp.prettier-vscode
     - bradlc.vscode-tailwindcss
+    - Prisma.prisma
